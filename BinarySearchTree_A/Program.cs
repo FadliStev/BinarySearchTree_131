@@ -44,6 +44,29 @@ namespace BinarySearchTree_A
             }
         }
 
+        public void insert(string element)/* Insert a node in teh binary search tree*/
+        {
+            Node tmp, parent = null, currenNode = null;
+                search(element, ref parent, ref currenNode);
+            if(currenNode != null)/* Check if teh node to be inserted already insered or not*/
+            {
+                Console.WriteLine("Duplicate words not allowed");
+                return;
+            }
+            else/* If the specified node is not present*/
+            {
+                tmp = new Node(element, null, null);/* Creates a node*/
+                if(parent == null)/* if the trees is empty*/
+                {
+                    ROOT = tmp;
+                }
+                else if(string.Compare(element, parent.info) < 0)
+                {
+                    parent.leftchild = tmp;
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
         }
