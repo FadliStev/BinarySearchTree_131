@@ -86,6 +86,35 @@ namespace BinarySearchTree_A
             }
         }
 
+        public void preorder(Node ptr)
+        {
+            if(ROOT == null)
+            {
+                Console.WriteLine("Tree is Empty");
+                return;
+            }
+            if(ptr != null)
+            {
+                Console.WriteLine(ptr.info + "");
+                preorder(ptr.leftchild);
+                preorder(ptr.rightchild);
+            }
+        }
+
+        public void postorder(Node ptr)/* Performs the postorder traversal of the three*/
+        {
+            if(ROOT == null)
+            {
+                Console.WriteLine("Tree is Empty");
+                return;
+            }
+            if(ptr != null)
+            {
+                postorder(ptr.leftchild);
+                postorder(ptr.rightchild);
+                Console.WriteLine(ptr.info + "");
+            }
+        }
         static void Main(string[] args)
         {
         }
